@@ -71,7 +71,6 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
-
 /* Basic */
 
 	@-ms-viewport {
@@ -3432,7 +3431,7 @@ input, select, textarea {
 				opacity: 1;
 				visibility: visible;
 			}
-
+		
 		body.is-preload #intro {
 			-moz-transform: translateY(2rem);
 			-webkit-transform: translateY(2rem);
