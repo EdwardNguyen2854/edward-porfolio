@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="When to Use Machine Learning (ML) - a blog post by Edward." />
+  <meta name="keywords" content="Machine Learning, ML, Automation, Data Analysis" />
+  <title>When to Use Machine Learning (ML) - Edward's Blog</title>
+  <!-- Google Fonts: Montserrat for headings and Roboto for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --primary-color: #112D4E;
+      --secondary-color: #3F72AF;
+      --accent-color: #F9F7F7;
+      --bg-color: #ffffff;
+      --card-bg: #DBE2EF;
+      --transition-speed: 0.3s;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+      scroll-behavior: smooth;
+    }
+    /* Sticky Header */
+    header {
+      background-color: rgba(249,247,247,0.95);
+      border-bottom: 1px solid var(--secondary-color);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      transition: background-color var(--transition-speed);
+    }
+    header.scrolled {
+      background-color: rgba(249,247,247,0.9);
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: var(--secondary-color);
+      font-weight: 500;
+      transition: color var(--transition-speed);
+    }
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active {
+      color: var(--primary-color);
+    }
+    /* Reading Progress Bar */
+    #progressBarContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: rgba(0,0,0,0.1);
+      z-index: 1200;
+    }
+    #progressBar {
+      width: 0%;
+      height: 100%;
+      background: var(--secondary-color);
+      transition: width 0.25s ease-out;
+    }
+    /* Main Content Area: Two Columns (TOC, Center Column) */
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      position: relative;
+      display: flex;
+      gap: 30px;
+    }
+    /* Table of Contents (TOC) Sidebar - Fixed on Left */
+    .toc {
+      position: fixed;
+      top: 160px; /* Top offset set to 160px */
+      left: 20px;
+      width: 300px; /* Increased width */
+      background-color: rgba(219,226,239,0.5); /* Semi-transparent */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-family: var(--font-body);
+      font-size: 0.8rem; /* Slightly smaller font */
+      z-index: 1100;
+    }
+    .toc h2 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 8px;
+    }
+    .toc a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: color var(--transition-speed);
+    }
+    .toc a:hover, .toc a.active {
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+    /* Center Column: Blog Post Content with Transparent Background */
+    .blog-post {
+      background-color: rgba(219,226,239,0.5); /* Semi-transparent */
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Remove hover effect on blog-post */
+    .blog-post:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    .blog-post header {
+      margin-bottom: 30px;
+    }
+    .blog-post header h2 {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      margin: 0;
+      color: var(--secondary-color);
+    }
+    .blog-post header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      /* Remove italic style for meta info */
+      font-style: normal;
+      color: var(--primary-color);
+    }
+    .blog-post section {
+      margin-bottom: 40px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .blog-post section:last-of-type {
+      border-bottom: none;
+    }
+    .blog-post section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    .blog-post section p {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: var(--primary-color);
+    }
+    /* Back-to-Blog & Top Buttons */
+    .back-to-blog {
+      text-align: center;
+      margin: 40px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .back-to-blog a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: var(--secondary-color);
+      color: var(--accent-color);
+      border-radius: 25px;
+      transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      width: 120px; /* Fixed width for uniformity */
+      text-align: center;
+    }
+    .back-to-blog a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    /* Footer */
+    footer {
+      background-color: var(--card-bg);
+      padding: 20px 0;
+      text-align: center;
+      color: var(--secondary-color);
+      font-family: var(--font-body);
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .toc {
+        display: none;
+      }
+      .content-wrapper {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div id="progressBarContainer">
+    <div id="progressBar"></div>
+  </div>
+  
+  <!-- Header / Navigation -->
+  <header id="header" role="banner">
+    <div class="header-container">
+      <h1 class="logo" tabindex="0">Edward</h1>
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content Area with TOC and Blog Post -->
+  <div class="content-wrapper">
+    <!-- Table of Contents (TOC) Sidebar -->
+    <aside class="toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#what-can">What Can Machine Learning Do?</a></li>
+        <li><a href="#shine">When Does Machine Learning Shine?</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </aside>
+    
+    <!-- Center Column: Blog Post Content -->
+    <article class="blog-post">
+      <header>
+        <h2 id="what-can">When to Use Machine Learning (ML)</h2>
+        <p>By Edward | January 1, 2025</p>
+      </header>
+      
+      <section id="what-can">
+        <h3>What Can Machine Learning Do?</h3>
+        <p>
+          Machine Learning (ML) has become a powerful tool across industries, including mechanical engineering, healthcare, finance, marketing, and beyond. As a BS Mechanical Engineer with a deep passion for AI, machine learning, and software development, I have self-taught myself Python, C++, CAD automation, and web development to build smart tools that optimise engineering workflows. Inspired by the book "Designing Machine Learning Systems - An Iterative Process for Production-Ready Applications," I’d like to share my personal thoughts, particularly incorporating my mechanical engineering experience, to guide understanding when and why to deploy machine learning effectively.
+        </p>
+        <p>
+          At its core, ML involves training algorithms to recognise and interpret complex patterns from existing data. Once these patterns are identified, the algorithms can use them to predict outcomes or classify new, unseen data points.
+        </p>
+        <p><strong>In mechanical engineering specifically, ML can be used for:</strong></p>
+        <ul>
+          <li>Predictive maintenance by analysing sensor data to anticipate machine failures.</li>
+          <li>Optimising design parameters through simulation data analysis.</li>
+          <li>Automating quality control inspections with computer vision techniques.</li>
+          <li>Generative AI applications for innovative product designs.</li>
+          <li>Simulation-driven modelling to improve manufacturing processes.</li>
+        </ul>
+      </section>
+      
+      <section id="shine">
+        <h3>When Does Machine Learning Shine?</h3>
+        <p>
+          Machine learning isn't suitable for every task, but it excels under specific conditions:
+        </p>
+        <ol>
+          <li><strong>When Tasks Are Repetitive:</strong> ML excels at repetitive tasks where human labour can be expensive, inefficient, or error-prone. For example, repeatedly inspecting mechanical components for manufacturing defects can become tedious and error-prone, making it a prime candidate for ML-based automation.</li>
+          <li><strong>When the Cost of a Wrong Prediction Is Low:</strong> ML models aren't always perfect—predictions can be incorrect. If the cost of these occasional errors is minimal, ML becomes an attractive option. For instance, an occasional false alert in predictive maintenance might cause minimal disruption, but overall efficiency gains remain significant.</li>
+          <li><strong>When Tasks Occur at Scale:</strong> ML thrives on scale. Human workers might handle small datasets easily, but as data grows exponentially, manually processing it becomes impractical. In mechanical engineering, handling extensive data from numerous sensors or simulations makes ML essential for timely and effective analysis.</li>
+          <li><strong>When Patterns Are Constantly Changing:</strong> In dynamic environments, patterns continuously evolve, making static rule-based systems ineffective. ML models adapt by retraining on new data, making them ideal for fluctuating scenarios, such as adapting predictive maintenance schedules based on changing operating conditions or load patterns.</li>
+        </ol>
+      </section>
+      
+      <section id="conclusion">
+        <h3>Conclusion</h3>
+        <p>
+          Machine learning isn't magic—it's a practical tool designed for specific contexts. Deploy ML when dealing with repetitive tasks, when the cost of errors is low, when processing data at scale, and in dynamic environments where patterns change frequently. My experience in mechanical engineering has shown me that leveraging ML for simulation, automation, and predictive modelling can significantly enhance engineering efficiency. Understanding when to use ML can help you build smarter, more efficient workflows and unlock the true potential of your data.
+        </p>
+      </section>
+      
+      <!-- Blog & Top Buttons -->
+      <div class="back-to-blog">
+        <a href="blog.html">← Blog</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Top ↑</a>
+      </div>
+    </article>
+  </div>
+  
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 Edward. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript: Sticky Header & Reading Progress -->
+  <script>
+    // Sticky header effect
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Reading progress bar
+    window.addEventListener('scroll', function () {
+      const progressBar = document.getElementById('progressBar');
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
+  </script>
+</body>
+</html>
