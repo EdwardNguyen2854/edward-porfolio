@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of a BS Mechanical Engineer, AI Enthusiast & Self-Taught Software Builder bridging CAD and code to engineer the future." />
+  <meta name="keywords" content="Portfolio, Mechanical Engineering, AI, Software Development, CAD, Automation" />
+  <title>Your Name - Portfolio</title>
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- (Optional) Font Awesome for additional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container header-container">
+      <h1 class="logo">Your Name</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#courses" class="nav-link">Courses</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Gradient Background -->
+  <section id="hero" class="hero">
+    <div class="hero-content container">
+      <h2 class="hero-title">Bridging Mechanical Engineering & AI with Code</h2>
+      <p class="hero-subtitle">From CAD to Code: Engineering the Future with Intelligent Automation</p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="content-section about-section">
+    <div class="container about-container">
+      <div class="about-image">
+        <!-- Replace with your professional headshot or illustration -->
+        <img src="images/headshot-placeholder.jpg" alt="Your Headshot" />
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I am a BS Mechanical Engineer with a deep passion for AI, machine learning, and software development.
+          Self-taught in Python, C++, CAD automation, and web development, I build smart tools to optimize
+          engineering workflows. My interests include generative AI, simulation, and predictive modeling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="content-section services-section">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Mechanical Engineering Consultation</h3>
+          <p>Expert advice on design optimization, prototyping, and product development.</p>
+        </div>
+        <div class="service-card">
+          <h3>AI Integration for Industrial Automation</h3>
+          <p>Implement AI solutions to enhance automation and efficiency in industrial processes.</p>
+        </div>
+        <div class="service-card">
+          <h3>Custom Software Development</h3>
+          <p>Building tailored software applications and automation tools.</p>
+        </div>
+        <div class="service-card">
+          <h3>Data Analysis & Simulation</h3>
+          <p>Leveraging data analytics and simulation techniques to solve engineering challenges.</p>
+        </div>
+        <div class="service-card">
+          <h3>Technical Writing & Content Creation</h3>
+          <p>Creating technical documents, tutorials, and blog posts on engineering and AI topics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="content-section courses-section">
+    <div class="container">
+      <h2>Courses</h2>
+      <div class="courses-grid">
+        <div class="course-card">
+          <h3>Introduction to CAD Automation</h3>
+          <p>A comprehensive course on automating CAD workflows using Python and macros.</p>
+        </div>
+        <div class="course-card">
+          <h3>Machine Learning for Engineers</h3>
+          <p>An applied course covering machine learning techniques for engineering applications.</p>
+        </div>
+        <div class="course-card">
+          <h3>Advanced Python for Data Analysis</h3>
+          <p>Deep dive into Python libraries for data analytics, simulation, and automation.</p>
+        </div>
+        <div class="course-card">
+          <h3>React for Web Development</h3>
+          <p>Learn how to build interactive user interfaces with React and modern JavaScript.</p>
+        </div>
+        <div class="course-card">
+          <h3>Effective System Design</h3>
+          <p>Principles and practices for designing robust engineering systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section with Filter Controls -->
+  <section id="skills" class="content-section skills-section">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Mechanical">Mechanical</button>
+        <button class="filter-btn" data-filter="AI">AI</button>
+        <button class="filter-btn" data-filter="Software">Software</button>
+      </div>
+      <!-- Display Selected Field -->
+      <div id="selected-field" style="text-align: center; margin-bottom: 20px;">Selected: All</div>
+      <div class="skills-grid">
+        <!-- Mechanical Skills -->
+        <div class="skill-card" data-field="Mechanical">
+          <img src="images/icons8-solidworks.svg" alt="SolidWorks Icon" />
+          <span>SolidWorks</span>
+        </div>
+        <div class="skill-card" data-field="Mechanical">
+          <img src="images/icons8-autocad.svg" alt="AutoCAD Icon" />
+          <span>AutoCAD</span>
+        </div>
+        <div class="skill-card" data-field="Mechanical">
+          <img src="images/icons8-ansys.svg" alt="ANSYS Icon" />
+          <span>ANSYS</span>
+        </div>
+        <div class="skill-card" data-field="Mechanical">
+          <img src="images/icons8-ptc-creo.svg" alt="PTC Creo Icon" />
+          <span>PTC Creo</span>
+        </div>
+        <div class="skill-card" data-field="Mechanical">
+          <img src="images/icons8-catia.svg" alt="CATIA Icon" />
+          <span>CATIA</span>
+        </div>
+        <div class="skill-card" data-field="Mechanical">
+          <img src="images/icons8-inventor.svg" alt="Inventor Icon" />
+          <span>Inventor</span>
+        </div>
+        <div class="skill-card" data-field="Mechanical">
+          <span>GD&amp;T</span>
+        </div>
+        <!-- AI Skills -->
+        <div class="skill-card" data-field="AI">
+          <img src="images/icons8-python.svg" alt="Python Icon" />
+          <span>Python</span>
+        </div>
+        <div class="skill-card" data-field="AI">
+          <img src="images/icons8-tensorflow.svg" alt="TensorFlow Icon" />
+          <span>TensorFlow</span>
+        </div>
+        <div class="skill-card" data-field="AI">
+          <img src="images/icons8-pytorch.svg" alt="PyTorch Icon" />
+          <span>PyTorch</span>
+        </div>
+        <div class="skill-card" data-field="AI">
+          <img src="images/icons8-opencv.svg" alt="OpenCV Icon" />
+          <span>OpenCV</span>
+        </div>
+        <div class="skill-card" data-field="AI">
+          <span>Scikit-Learn</span>
+        </div>
+        <!-- Software Skills -->
+        <div class="skill-card" data-field="Software">
+          <img src="images/icons8-react.svg" alt="React Icon" />
+          <span>React</span>
+        </div>
+        <div class="skill-card" data-field="Software">
+          <img src="images/icons8-github.svg" alt="GitHub Icon" />
+          <span>GitHub</span>
+        </div>
+        <div class="skill-card" data-field="Software">
+          <span>FastAPI</span>
+        </div>
+        <div class="skill-card" data-field="Software">
+          <span>Flask</span>
+        </div>
+        <div class="skill-card" data-field="Software">
+          <span>SQL</span>
+        </div>
+        <div class="skill-card" data-field="Software">
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="content-section portfolio-section">
+    <div class="container">
+      <h2>Portfolio & Projects</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/project1-placeholder.jpg" alt="AI-Enhanced 3D Object Recognition" loading="lazy" />
+          <div class="portfolio-info">
+            <h3>AI-Enhanced 3D Object Recognition</h3>
+            <p>STL file classification using machine learning.</p>
+            <a href="#" class="btn btn-small">Live Demo</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/project2-placeholder.jpg" alt="Python-Based CAD Automation" loading="lazy" />
+          <div class="portfolio-info">
+            <h3>Python-Based CAD Automation</h3>
+            <p>Automating repetitive SolidWorks tasks with custom scripts.</p>
+            <a href="#" class="btn btn-small">View Code</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/project3-placeholder.jpg" alt="Mechanical Simulation Optimization" loading="lazy" />
+          <div class="portfolio-info">
+            <h3>Mechanical Simulation Optimization</h3>
+            <p>Using AI to optimize design parameters for simulations.</p>
+            <a href="#" class="btn btn-small">Explore More</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="images/project4-placeholder.jpg" alt="Engineering Workflow Automation" loading="lazy" />
+          <div class="portfolio-info">
+            <h3>Engineering Workflow Automation Tools</h3>
+            <p>FastAPI-based dashboards to streamline project management.</p>
+            <a href="#" class="btn btn-small">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="content-section testimonials-section">
+    <div class="container">
+      <h2>Testimonials & Collaborations</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Your Name has an incredible knack for bridging engineering and technology. A true innovator!"
+          </p>
+          <p class="testimonial-author">– Jane Doe, Engineering Manager</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "The AI-driven tools developed by Your Name have revolutionized our workflow. Highly recommended."
+          </p>
+          <p class="testimonial-author">– John Smith, CTO</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "An exceptional talent in both mechanical design and software development. A rare combination."
+          </p>
+          <p class="testimonial-author">– Alex Lee, Project Director</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section (Optional) -->
+  <section id="blog" class="content-section blog-section">
+    <div class="container">
+      <h2>Blog & Insights</h2>
+      <div class="blog-grid">
+        <div class="blog-post">
+          <img src="images/blog1-placeholder.jpg" alt="How AI is Revolutionizing Mechanical Engineering" loading="lazy" />
+          <h3>How AI is Revolutionizing Mechanical Engineering</h3>
+          <p>Discover the impact of artificial intelligence on simulation and design optimization.</p>
+          <a href="#" class="btn btn-small">Read More</a>
+        </div>
+        <div class="blog-post">
+          <img src="images/blog2-placeholder.jpg" alt="Automating CAD Workflows with Python & AI" loading="lazy" />
+          <h3>Automating CAD Workflows with Python & AI</h3>
+          <p>Learn how to streamline CAD tasks and boost productivity through automation.</p>
+          <a href="#" class="btn btn-small">Read More</a>
+        </div>
+        <div class="blog-post">
+          <img src="images/blog3-placeholder.jpg" alt="The Future of Simulation: Trends & Predictions" loading="lazy" />
+          <h3>The Future of Simulation: Trends & Predictions</h3>
+          <p>Insights into how simulation technology is evolving with advanced AI techniques.</p>
+          <a href="#" class="btn btn-small">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="content-section contact-section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>If you have questions, project inquiries, or would like to collaborate, please fill out the form below.</p>
+      <form id="contactForm" action="https://formspree.io/your.email@example.com" method="POST">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required aria-label="Your Name" />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="_replyto" required aria-label="Your Email" />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required aria-label="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Filtering Skills -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const skillCards = document.querySelectorAll('.skill-card');
+      const selectedFieldEl = document.getElementById('selected-field');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const filterValue = this.getAttribute('data-filter');
+
+          // Remove active class from all buttons and add to clicked one
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          // Update the selected field text
+          selectedFieldEl.textContent = 'Selected: ' + (filterValue === 'all' ? 'All' : filterValue);
+
+          // Filter skills
+          skillCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-field') === filterValue) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
